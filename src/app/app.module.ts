@@ -14,6 +14,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AuthInterceptorService } from './Services/auth-interceptor.service';
 import { LoginInterceptorService } from './Services/login-interceptor.service';
+import { LoaderComponent } from './utility/loader/loader.component';
+import { SnackbarComponent } from './utility/snackbar/snackbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LoginInterceptorService } from './Services/login-interceptor.service';
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LoaderComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,

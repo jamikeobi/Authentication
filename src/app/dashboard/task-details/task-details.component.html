@@ -1,6 +1,6 @@
 <div class="overlay">
 	<div class="popup">
-        <h2>{{currentTask?.title}}</h2>
+        <h2>{{currentTask.title}}</h2>
         <hr>
 		<a class="close" href="#" (click)="onCloseTask()">&times;</a>
 		<div class="content">
@@ -8,26 +8,26 @@
                 
                 <h3>Description</h3>
                 <p>
-                    {{currentTask?.desc}}
+                    {{currentTask.desc}}
                 </p>
                 <div style="display: flex; margin-top: 20px;">
                     <div style="width: 50%;">
                         <strong>Assigned To: </strong>
-                        {{currentTask?.assignedTo}}
+                        {{currentTask.assignedTo}}
                     </div>
                     <div style="width: 50%;">
                         <strong>Created At: </strong>
-                        {{currentTask?.createdAt}}
+                        {{currentTask.createdAt}}
                     </div>
                 </div>
                 <div style="display: flex; margin-top: 20px;">
                     <div style="width: 50%;">
                         <strong>Priority: </strong>
-                        {{currentTask?.priority}}
+                        {{currentTask.priority}}
                     </div>
                     <div style="width: 50%;">
                         <strong>Current Status: </strong>
-                        {{currentTask?.status}}
+                        {{currentTask.status}}
                     </div>
                 </div>
             </section>

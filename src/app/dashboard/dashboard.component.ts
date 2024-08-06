@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit{
 
   currentTask: Task | null = null;
 
-  errorMessage: string | null = null;
+  errorInfo: string | null = null;
 
   editMode: boolean = false;
   selectedTask!: Task;
@@ -90,14 +90,14 @@ export class DashboardComponent implements OnInit{
 
   private setErrorMessage(err: HttpErrorResponse){
     if(err.error.error === 'Permission denied'){
-      this.errorMessage = 'You do not have permisssion to perform this action';
+      this.errorInfo = 'You do not have permisssion to perform this action';
     }
     else{
-      this.errorMessage = err.message;
+      this.errorInfo = err.message;
     }
 
     setTimeout(() => {
-      this.errorMessage = null;
+      this.errorInfo = null;
     }, 3000);
   }
 
