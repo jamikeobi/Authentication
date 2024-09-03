@@ -16,6 +16,7 @@ import { AuthInterceptorService } from './Services/auth-interceptor.service';
 import { LoginInterceptorService } from './Services/login-interceptor.service';
 import { LoaderComponent } from './utility/loader/loader.component';
 import { SnackbarComponent } from './utility/snackbar/snackbar.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SnackbarComponent } from './utility/snackbar/snackbar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},

@@ -4,6 +4,7 @@ import { AuthService } from '../Services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthResponse } from '../Model/AuthResponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   isLoading: boolean = false;
   // errorMessage: string | null = null;
   authObs: Observable<AuthResponse>
+  router: Router = inject(Router);
 
   @ViewChild('authForm') authForm!: NgForm;
 
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.isLoading = true;
       this.authService.signUp(email, password).subscribe(
         (response) => {
-          this.submitted = true
+          this.submitted = true;
           console.log('Response: ', response);
           this.isLoading = false;
           // this.errorInfo = 'You have successfully created an account.'
@@ -81,6 +83,7 @@ export class LoginComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.isLoading = false;
+        this.router.navigate(['/dashboard']);
       },
       error: (errMsg) => {
         this.isLoading = false;

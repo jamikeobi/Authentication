@@ -90,7 +90,7 @@ export class DashboardComponent implements OnInit{
 
   private setErrorMessage(err: HttpErrorResponse){
     if(err.error.error === 'Permission denied'){
-      this.errorInfo = 'You do not have permisssion to perform this action';
+      this.errorInfo = 'You do not have permission to perform this action';
     }
     else{
       this.errorInfo = err.message;

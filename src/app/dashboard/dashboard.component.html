@@ -1,10 +1,10 @@
 <app-create-task 
-        *ngIf="showCreateTaskForm" 
-        (CloseForm)="CloseCreateTaskForm()"
-        (EmitTaskData)="CreateOrUpdateTask($event)"
-        [isEditMode]="editMode"
-        [selectedTask]="selectedTask"
-    >
+    *ngIf="showCreateTaskForm" 
+    (CloseForm)="CloseCreateTaskForm()"
+    (EmitTaskData)="CreateOrUpdateTask($event)"
+    [isEditMode]="editMode"
+    [selectedTask]="selectedTask"
+>
 </app-create-task>
 
 <app-task-details *ngIf="showTaskDetails" 
@@ -29,7 +29,7 @@
     <div class="dashboard-item-container">
         <!-- <div class="sb sb-error" *ngIf="errorMessage">{{ errorMessage }}</div> -->
         <app-snackbar [errorInfo]="errorInfo" *ngIf="errorInfo"></app-snackbar>
-        <app-loader ngIf="isLoading"></app-loader>
+        <app-loader *ngIf="isLoading"></app-loader>
         <div style="text-align: center;" *ngIf="allTasks.length < 1">
             <h2>No task has been created yet!</h2>
         </div>
